@@ -1,17 +1,17 @@
 # Birthday Project 🎉
 
-A simple and fun web project to celebrate birthdays. This project allows users to enjoy a birthday-themed webpage with interactive elements and styling.
+A fun birthday-themed web project.  
+This project is heavily modified and inspired by [HappyBirthdayGF](https://github.com/nikitayadav19/HappyBirthdayGF).  
 
 ## Live Demo 🌐
 
-You can view and interact with the project online here:  
 [https://deeeztt.github.io/Birthday/](https://deeeztt.github.io/Birthday/)
 
 ## Features ✨
 
-- Beautiful birthday-themed design  
-- Interactive elements (animations, effects)  
-- Easy to navigate and lightweight  
+- Birthday-themed animations and effects  
+- Redesigned UI and interactive elements  
+- Modified from the original template
 
 ## Technologies Used 🛠️
 
@@ -21,8 +21,22 @@ You can view and interact with the project online here:
 
 ## Getting Started 🚀
 
-If you want to run this project locally:
-
 1. Clone the repository:
 ```bash
-git clone https://github.com/deeeztt/Birthday.git
+git clone <your-repo-url>
+```
+
+2. Open `index.html` in your browser.
+
+## Inspiration 💡
+
+Heavily inspired and modified from [HappyBirthdayGF](https://github.com/nikitayadav19/HappyBirthdayGF)
+
+## Contribution 🤝
+
+Feel free to fork this project for personal learning purposes.
+
+## License 📄
+
+All modifications and additions are done by me.  
+Original project code is owned by the author of HappyBirthdayGF and used for educational purposes
