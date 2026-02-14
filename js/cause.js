@@ -1,42 +1,33 @@
 const reasons = [
   {
-    text: "You deserve a life that feels as beautiful as your heart.",
-    emoji: "🌟",
+    text: 'You deserve a life that feels as beautiful as your heart.',
+    emoji: '🌟',
   },
   {
-    text: "You have handled more than people know, and you are still standing",
-    emoji: "🌿",
+    text: 'You have handled more than people know, and you are still standing',
+    emoji: '🌿',
   },
   {
-    text: "This year is yours to grow, to win, and to shine",
-    emoji: "✊",
+    text: 'This year is yours to grow, to win, and to shine',
+    emoji: '✊',
   },
   {
-    text: "Trust yourself more. You are capable of more than you think",
-    emoji: "🍊",
+    text: 'Trust yourself more. You are capable of more than you think',
+    emoji: '🍊',
   },
 ];
 
 let currentReasonIndex = 0;
-const reasonsContainer = document.getElementById("reasons-container");
-const shuffleButton = document.querySelector(".shuffle-button");
-const reasonCounter = document.querySelector(".reason-counter");
+const reasonsContainer = document.getElementById('reasons-container');
+const shuffleButton = document.querySelector('.shuffle-button');
+const reasonCounter = document.querySelector('.reason-counter');
 let isTransitioning = false;
 
-/*et mouseX = 0, mouseY = 0;
-let posX = 0, posY = 0;*/
-/* =============================
-   SMOOTH CUSTOM CURSOR
-============================= */
-
-/* =============================
-REASON CARD LOGIC
-============================= */
 function createReasonCard(reason) {
-  const card = document.createElement("div");
-  card.className = "reason-card";
-  const text = document.createElement("div");
-  text.className = "reason-text";
+  const card = document.createElement('div');
+  card.className = 'reason-card';
+  const text = document.createElement('div');
+  text.className = 'reason-text';
   text.innerHTML = `${reason.emoji} ${reason.text}`;
   card.appendChild(text);
   reasonsContainer.appendChild(card);
@@ -45,7 +36,7 @@ function createReasonCard(reason) {
     opacity: 0,
     y: 40,
     duration: 0.5,
-    ease: "back.out(1.7)",
+    ease: 'back.out(1.7)',
   });
 }
 
@@ -59,13 +50,13 @@ function displayNewReason() {
     currentReasonIndex++;
 
     if (currentReasonIndex === reasons.length) {
-      shuffleButton.textContent = "See Whats Next";
-      shuffleButton.addEventListener("click", () => {
-        gsap.to("body", {
+      shuffleButton.textContent = 'See Whats Next';
+      shuffleButton.addEventListener('click', () => {
+        gsap.to('body', {
           opacity: 0,
           duration: 1,
           onComplete: () => {
-            window.location.href = "last.html";
+            window.location.href = 'last.html';
           },
         });
       });
@@ -79,7 +70,7 @@ function displayNewReason() {
   }
 }
 
-shuffleButton.addEventListener("click", () => {
+shuffleButton.addEventListener('click', () => {
   gsap.to(shuffleButton, {
     scale: 0.9,
     duration: 0.1,
@@ -89,87 +80,76 @@ shuffleButton.addEventListener("click", () => {
   displayNewReason();
 });
 
-/* =============================
-FLOATING EFFECT
-============================= */
 function createFloatingElement() {
-  const elements = ["🌸", "✨", "💖", "🌊", "⭐"];
-  const element = document.createElement("div");
-  element.className = "floating";
+  const elements = ['🌸', '✨', '💖', '🌊', '⭐'];
+  const element = document.createElement('div');
+  element.className = 'floating';
   element.textContent = elements[Math.floor(Math.random() * elements.length)];
-  element.style.left = Math.random() * window.innerWidth + "px";
-  element.style.top = Math.random() * window.innerHeight + "px";
-  element.style.fontSize = Math.random() * 20 + 12 + "px";
+  element.style.left = Math.random() * window.innerWidth + 'px';
+  element.style.top = Math.random() * window.innerHeight + 'px';
+  element.style.fontSize = Math.random() * 20 + 12 + 'px';
   document.body.appendChild(element);
 
   gsap.to(element, {
     y: -300,
     opacity: 0,
     duration: Math.random() * 5 + 5,
-    ease: "power1.out",
+    ease: 'power1.out',
     onComplete: () => element.remove(),
   });
 }
 setInterval(createFloatingElement, 2500);
 
-/* =============================
-HOVER BUTTON EFFECT FOR CURSOR
-============================= */
-const cursor = document.querySelector(".custom-cursor");
+const cursor = document.querySelector('.custom-cursor');
 let mouseX = 0,
   mouseY = 0;
 let posX = 0,
   posY = 0;
-document.addEventListener("mousemove", (e) => {
+document.addEventListener('mousemove', (e) => {
   gsap.to(cursor, {
     x: e.clientX,
     y: e.clientY,
     duration: 0.1,
-    ease: "power2.out",
+    ease: 'power2.out',
   });
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
 });
 
-// Animate cursor smoothly using requestAnimationFrame
 function animateCursor() {
-  posX += (mouseX - posX) * 0.15; // adjust 0.15 for smoothness
+  posX += (mouseX - posX) * 0.15;
   posY += (mouseY - posY) * 0.15;
   cursor.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
   requestAnimationFrame(animateCursor);
 }
 animateCursor();
 
-window.addEventListener("load", () => {
-  // Title animation
-  gsap.to("h1", {
+window.addEventListener('load', () => {
+  gsap.to('h1', {
     opacity: 1,
     duration: 1,
     y: 20,
-    ease: "bounce.out",
+    ease: 'bounce.out',
   });
 
-  // Button animation
-  gsap.to(".cta-button", {
+  gsap.to('.cta-button', {
     opacity: 1,
     duration: 1,
     y: -20,
-    ease: "back.out",
+    ease: 'back.out',
   });
 
-  // Start typing effect
   typeGreeting();
 
-  // Floating elements
   setInterval(createFloating, 1000);
 });
 
-document.querySelectorAll(".shuffle-button").forEach((button) => {
-  button.addEventListener("mouseenter", () => {
+document.querySelectorAll('.shuffle-button').forEach((button) => {
+  button.addEventListener('mouseenter', () => {
     gsap.to(cursor, { scale: 1.5, duration: 0.2 }); // cursor membesar
   });
 
-  button.addEventListener("mouseleave", () => {
+  button.addEventListener('mouseleave', () => {
     gsap.to(cursor, { scale: 1, duration: 0.2 }); // kembali normal
   });
 });
