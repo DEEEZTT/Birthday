@@ -9,7 +9,7 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
-const greetingText = 'Time keeps moving, but so do you stronger, smarter, more you.';
+const greetingText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
 const greetingElement = document.querySelector('.greeting');
 let charIndex = 0;
 
@@ -21,7 +21,7 @@ function typeGreeting() {
   }
 }
 
-const floatingElements = ['🎉', '✨', '🍊', '💫', '🎈'];
+const floatingElements = ['🎉', '✨', '🧑🏿‍🦲', '💫', '🎈'];
 function createFloating() {
   const element = document.createElement('div');
   element.className = 'floating';

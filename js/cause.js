@@ -1,19 +1,19 @@
 const reasons = [
   {
-    text: 'You deserve a life that feels as beautiful as your heart.',
+    text: 'Lorem ipsum dolor sit amet',
     emoji: '🌟',
   },
   {
-    text: 'You have handled more than people know, and you are still standing',
+    text: 'consectetur adipiscing elit',
     emoji: '🌿',
   },
   {
-    text: 'This year is yours to grow, to win, and to shine',
+    text: 'sed do eiusmod tempor incididunt ut labore',
     emoji: '✊',
   },
   {
-    text: 'Trust yourself more. You are capable of more than you think',
-    emoji: '🍊',
+    text: 'et dolore magna aliqua',
+    emoji: '🍙',
   },
 ];
 

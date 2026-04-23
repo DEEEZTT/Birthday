@@ -38,5 +38,5 @@ document.addEventListener('mousemove', (e) => {
 const goodbyeBtn = document.querySelector('.goodbye-btn');
 goodbyeBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  alert('From me, Human.');
+  alert('Lorem ipsum dolor sit amet');
 });
